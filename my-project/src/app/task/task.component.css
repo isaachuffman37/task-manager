@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.task-manager {
+  width: 80%;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Input */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.task-input input:focus {
+  border-color: #007bff;
+}
+
+.task-header{
+  font-size: 2rem;
+  margin-bottom: 5px;
+  border-bottom: solid 1px black;
+}
+
+.task-input button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.task-input button:hover {
+  background: #0056b3;
+}
+
+/* Table */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.task-table thead {
+  background: #007bff;
+  color: white;
+}
+
+.task-table th, .task-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button.done {
+  background: #28a745;
+  color: white;
+}
+
+button.done:hover {
+  background: #218838;
+}
+
+button.undo {
+  background: #ffc107;
+  color: black;
+}
+
+button.undo:hover {
+  background: #e0a800;
+}
+
+button.delete {
+  background: #dc3545;
+  color: white;
+}
+
+button.delete:hover {
+  background: #c82333;
+}
+/* Congratulatory Message Styling */
+.congratulate-message {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  border-left: 6px solid #1e7e34;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+/* Encouragement Message Styling */
+.encourage-message {
+  background-color: #ffc107;
+  color: #333;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  border-left: 6px solid #e0a800;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.styling-div{
+  align-items: center;
+  justify-items: center;
+}
+
+/* Source Text Styling */
+.encourage-source {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: normal;
+  color: #555;
+  margin-top: 5px;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .task-input {
+    flex-direction: column;
+  }
+  
+  .task-input input,
+  .task-input button {
+    width: 100%;
+  }
+}

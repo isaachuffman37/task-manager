@@ -1,0 +1,61 @@
+<div class="styling-div">
+<div class="task-manager">
+  <div class="task-input">
+    <input
+      #taskDesc
+      type="text"
+      placeholder="New task"
+    />
+    <button (click)="addTask(taskDesc.value); taskDesc.value=''">
+      Add Task
+    </button>
+  </div>
+
+  <h2 class="task-header">To-Do Tasks</h2>
+  <table *ngIf="tasks.length > 0" class="task-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.description }}</td>
+        <td>
+          <button class="done" (click)="markAsDone(task)">Done</button>
+          <button class="delete" (click)="deleteTask(task)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="task-header">Completed Tasks</h2>
+  <table *ngIf="completedTasks.length > 0" class="task-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of completedTasks">
+        <td>{{ task.description }}</td>
+        <td>
+          <button class="undo" (click)="undoTask(task)">Undo</button>
+          <button class="delete" (click)="deleteTask(task)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="congratulateMessage" class="congratulate-message">
+    {{ congratulateMessage }}
+  </div>
+  
+  <div *ngIf="encourageMessage" class="encourage-message">
+    <p>{{ encourageMessage }}</p>
+    <p class="encourage-source">{{ source }}</p>
+  </div>
+</div>
+</div>
