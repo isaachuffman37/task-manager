@@ -49,6 +49,10 @@
     </tbody>
   </table>
 
+  <button class="done" (click)="completeAllTasks()">Complete All</button>
+  <button class="undo" (click)="uncompleteAllTasks()">Un-complete All</button>
+  <button class="delete" (click)="deleteAllTasks()">Delete All</button>
+
   <div *ngIf="congratulateMessage" class="congratulate-message">
     {{ congratulateMessage }}
   </div>

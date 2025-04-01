@@ -26,4 +26,15 @@ export class TaskService {
   deleteTask(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  
+  deleteAllTasks(): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}`);
+  }
+
+  completeAllTasks(): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/complete`, {completed: true});
+  }
+  uncompleteAllTasks(): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/uncomplete`, {completed: false});
+  }
 }

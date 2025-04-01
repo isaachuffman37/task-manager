@@ -40,6 +40,17 @@ export class TaskComponent implements OnInit{
     });
   }
 
+  completeAllTasks() {
+    this.taskService.completeAllTasks().subscribe(()=>this.loadTasks());
+  }
+  uncompleteAllTasks() {
+    this.taskService.uncompleteAllTasks().subscribe(()=>this.loadTasks());
+  }
+
+  deleteAllTasks() {
+    this.taskService.deleteAllTasks().subscribe(() => this.loadTasks());
+  }
+
   addTask(description: string): void {
     if (!description.trim()) return;
     const newTask = new Task(description);

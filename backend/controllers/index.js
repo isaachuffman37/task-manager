@@ -30,6 +30,34 @@ exports.updateTask = async (req, res) => {
   }
 };
 
+exports.uncompleteAllTasks = async (req, res) => {
+  try {
+    let result = await Task.updateMany({}, { $set: { completed: false}})
+    res.status(201).json(result)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
+
+exports.completeAllTasks = async (req, res) => {
+  try {
+    let result = await Task.updateMany({}, { $set: { completed: true}})
+    res.status(201).json(result)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
+exports.deleteAllTasks = async (req, res) => {
+  try {
+    let result = await Task.deleteMany({});
+    res.status(201).json(result)
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+}
+
 exports.deleteTask = async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);
